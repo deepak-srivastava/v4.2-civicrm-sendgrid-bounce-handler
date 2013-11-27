@@ -39,7 +39,7 @@ $config = CRM_Core_Config::singleton();
 // authenticate
 CRM_Utils_System::authenticateKey();
 
-$json = json_decode($_POST, TRUE);
+$json = json_decode($HTTP_RAW_POST_DATA, TRUE);
 foreach ($json as $data) {
   switch( $data['event'] ) {
   case 'bounce':
